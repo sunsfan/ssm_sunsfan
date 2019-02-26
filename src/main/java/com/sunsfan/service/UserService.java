@@ -24,25 +24,44 @@ import java.util.List;
  * @version 1.0.0
  */
 public interface UserService {
+
     /**
-     * 根据id获取人员对象
+     * 根据id获取用户对象
      *
      * @param id
      * @return
      */
     User selectUserById(Long id);
 
+    /**
+     * 获取所有用户对象
+     *
+     * @param
+     * @return
+     */
     List<User> selectAll();
 
-    int insertUser(User user);
+    /**
+     * 新增用户对象
+     *
+     * @param user
+     * @return
+     */
+    int saveUser(User user);
 
-    int insertUserList(List<User> userList);
-
+    /**
+     * 修改用户对象
+     *
+     * @param user
+     * @return
+     */
     int updateUser(User user);
 
-    int updateUserList(List<User> userList);
-
+    /**
+     * 根据id删除用户对象
+     *
+     * @param id
+     * @return
+     */
     int deleteUser(Long id);
-
-    int deleteUserByIdList(List<Long> idList);
 }

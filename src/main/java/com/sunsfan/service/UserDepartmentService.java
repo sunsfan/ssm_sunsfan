@@ -23,20 +23,44 @@ import java.util.List;
  * @version 1.0.0
  */
 public interface UserDepartmentService {
-    
+
+    /**
+     * 根据id获取部门对象
+     *
+     * @param id
+     * @return
+     */
     UserDepartment selectUserDepartmentById(Long id);
 
+    /**
+     * 获取所有用户对象
+     *
+     * @param
+     * @return
+     */
     List<UserDepartment> selectAll();
 
-    int insertUserDepartment(UserDepartment UserDepartment);
+    /**
+     * 新增部门对象
+     *
+     * @param userDepartment
+     * @return
+     */
+    int saveUserDepartment(UserDepartment userDepartment);
 
-    int insertUserDepartmentList(List<UserDepartment> UserDepartmentList);
+    /**
+     * 修改部门对象
+     *
+     * @param userDepartment
+     * @return
+     */
+    int updateUserDepartment(UserDepartment userDepartment);
 
-    int updateUserDepartment(UserDepartment UserDepartment);
-
-    int updateUserDepartmentList(List<UserDepartment> UserDepartmentList);
-
+    /**
+     * 根据id删除部门对象
+     *
+     * @param id
+     * @return
+     */
     int deleteUserDepartment(Long id);
-
-    int deleteUserDepartmentByIdList(List<Long> idList);
 }
