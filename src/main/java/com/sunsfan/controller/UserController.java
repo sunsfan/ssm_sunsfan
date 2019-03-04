@@ -66,4 +66,28 @@ public class UserController {
         modelMap.addAttribute("user", user);
         return "admin/userDetail";
     }
+
+    // 更新用户信息页面
+    @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
+    public String updateUserInfo(@PathVariable("id") Long userId, ModelMap modelMap){
+        User user = userService.selectUserById(userId);
+        modelMap.addAttribute("user", user);
+        return "/admin/updateUser";
+    }
+
+    // POST请求更新用户信息
+    @RequestMapping(value = "/updateUserPost", method = RequestMethod.POST)
+    public String updateUserPost(@ModelAttribute("user") User user){
+        userService.updateUser(user);
+        return "redirect:/admin/users";
+    }
+
+    // 逻辑删除用户
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    public String deleteUser(@PathVariable("id") Long userId){
+        User user = userService.selectUserById(userId);
+        user.setIsdelete(Boolean.TRUE);
+        userService.updateUser(user);
+        return "redirect:/admin/users";
+    }
 }

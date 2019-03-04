@@ -63,7 +63,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int saveUser(User user) {
-        return userMapper.insert(user);
+        return userMapper.insertSelective(user);
     }
 
     @Override
