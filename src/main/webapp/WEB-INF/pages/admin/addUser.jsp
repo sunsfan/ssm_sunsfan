@@ -29,8 +29,8 @@
             <input type="text" class="form-control" id="id" name="id" placeholder="Enter 员工ID:" />
         </div>
         <div class="form-group">
-            <label for="departmentId">部门ID:</label>
-            <input type="text" class="form-control" id="departmentId" name="departmentId" placeholder="Enter 部门ID:" />
+            <label for="departmentid">部门ID:</label>
+            <input type="text" class="form-control" id="departmentid" name="departmentid" placeholder="Enter 部门ID:" />
         </div>
         <div class="form-group">
             <label for="name">姓名:</label>
@@ -41,12 +41,9 @@
             <input type="number" class="form-control" id="age" name="age" placeholder="Enter 年龄:" />
         </div>
         <div class="form-group">
-            <label>性别:</label><br>
-            <form name="sex">
-                男:    <input type="radio" name="sex" value="m"><br>
-                女:    <input type="radio" name="sex" value="f"><br>
-            </form>
-        </div>
+            <label for="sex">性别:</label><br>
+            <input type="radio" id="sex" name="sex" value="m" />男<br>
+            <input type="radio" id="sex" name="sex" value="f" />女<br>
         <div class="form-group">
             <label for="remark">标记:</label>
             <input type="text" class="form-control" id="remark" name="remark" placeholder="Enter 标记:" />
@@ -56,4 +53,10 @@
         </div>
     </form:form>
 </div>
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
+</html>

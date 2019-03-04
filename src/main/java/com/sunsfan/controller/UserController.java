@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -36,7 +37,8 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    // 查看用户列表
+    @RequestMapping(method = RequestMethod.GET)
     public String getUsers(ModelMap modelMap){
         List<User> userList = userService.selectAll();
 
@@ -44,14 +46,24 @@ public class UserController {
         return "admin/users";
     }
 
+    // 添加用户界面
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String addUser(){
         return "admin/addUser";
     }
 
+    // POST请求添加用户
     @RequestMapping(value = "/addUserPost", method = RequestMethod.POST)
     public String addUserPost(@ModelAttribute("user") User user){
         userService.saveUser(user);
         return "redirect:/admin/users";
+    }
+
+    // 查看用户详情
+    @RequestMapping(value = "/show/{id}", method = RequestMethod.GET)
+    public String showUserDetail(@PathVariable("id") Long userId, ModelMap modelMap){
+        User user = userService.selectUserById(userId);
+        modelMap.addAttribute("user", user);
+        return "admin/userDetail";
     }
 }
