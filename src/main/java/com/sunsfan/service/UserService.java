@@ -58,10 +58,18 @@ public interface UserService {
     int updateUser(User user);
 
     /**
-     * 根据id删除用户对象
+     * 根据id逻辑删除用户对象
      *
      * @param id
      * @return
      */
     int deleteUser(Long id);
+
+    /**
+     * 根据员工id查询所属部门对象
+     *
+     * @param id
+     * @return
+     */
+    UserDepartment selectUserDepartmentByUserId(Long id);
 }

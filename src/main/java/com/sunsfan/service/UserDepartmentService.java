@@ -10,6 +10,7 @@
  */
 package com.sunsfan.service;
 
+import com.sunsfan.entity.User;
 import com.sunsfan.entity.UserDepartment;
 
 import java.util.List;
@@ -33,12 +34,20 @@ public interface UserDepartmentService {
     UserDepartment selectUserDepartmentById(Long id);
 
     /**
-     * 获取所有用户对象
+     * 获取所有部门对象
      *
      * @param
      * @return
      */
     List<UserDepartment> selectAll();
+
+    /**
+     * 根据部门id获取部门下所有员工对象
+     *
+     * @param id
+     * @return
+     */
+    List<User> selectAllUserByDepartmentId(Long id);
 
     /**
      * 新增部门对象
@@ -57,7 +66,7 @@ public interface UserDepartmentService {
     int updateUserDepartment(UserDepartment userDepartment);
 
     /**
-     * 根据id删除部门对象
+     * 根据id逻辑删除部门对象
      *
      * @param id
      * @return

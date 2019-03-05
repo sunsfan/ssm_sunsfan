@@ -12,6 +12,7 @@ package com.sunsfan.service.impl;
 
 import com.sunsfan.dao.UserMapper;
 import com.sunsfan.entity.User;
+import com.sunsfan.entity.UserDepartment;
 import com.sunsfan.entity.UserExample;
 import com.sunsfan.service.UserService;
 import org.slf4j.Logger;
@@ -82,5 +83,10 @@ public class UserServiceImpl implements UserService {
             user.setIsdelete(Boolean.TRUE);
             return updateUser(user);
         }
+    }
+
+    @Override
+    public UserDepartment selectUserDepartmentByUserId(Long id) {
+        return null;
     }
 }

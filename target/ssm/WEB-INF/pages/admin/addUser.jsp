@@ -25,10 +25,6 @@
     <hr/>
     <form:form action="/admin/users/addUserPost" method="post" modelAttribute="user" role="form">
         <div class="form-group">
-            <label for="id">员工ID:</label>
-            <input type="text" class="form-control" id="id" name="id" placeholder="Enter 员工ID:" />
-        </div>
-        <div class="form-group">
             <label for="departmentid">部门ID:</label>
             <input type="text" class="form-control" id="departmentid" name="departmentid" placeholder="Enter 部门ID:" />
         </div>

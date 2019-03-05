@@ -242,7 +242,7 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   <select id="getUserDepartment" resultMap="com.sunsfan.dao.UserDepartmentMapper.BaseResultMap">
-    select id,departmentType,departmentName,groupName,isDelete from user_department where id=#{departmentId}
+    select id, departmentType, departmentName, groupName, from user_department where id=#{departmentId}
   </select>
   <insert id="insertBatchSelective" parameterType="java.util.List">
     insert into user
