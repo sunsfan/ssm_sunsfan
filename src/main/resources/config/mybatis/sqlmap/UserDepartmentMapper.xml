@@ -7,7 +7,6 @@
     <result column="departmentName" jdbcType="VARCHAR" property="departmentname" />
     <result column="groupName" jdbcType="VARCHAR" property="groupname" />
     <result column="isDelete" jdbcType="BIT" property="isdelete" />
-    <collection column="id" property="users" select="getUsers" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -209,9 +208,6 @@
       isDelete = #{isdelete,jdbcType=BIT}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <select id="getUsers" resultMap="com.sunsfan.dao.UserMapper.BaseResultMap">
-    select id, departmentId, name, age, sex, remark from user where departmentId=#{id}
-  </select>
   <insert id="insertBatchSelective" parameterType="java.util.List">
     insert into user_department
     <trim prefix="(" suffix=")" suffixOverrides=",">

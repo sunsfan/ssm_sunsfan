@@ -64,12 +64,4 @@ public interface UserService {
      * @return
      */
     int deleteUser(Long id);
-
-    /**
-     * 根据员工id查询所属部门对象
-     *
-     * @param id
-     * @return
-     */
-    UserDepartment selectUserDepartmentByUserId(Long id);
 }

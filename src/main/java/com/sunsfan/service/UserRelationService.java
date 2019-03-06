@@ -10,6 +10,11 @@
  */
 package com.sunsfan.service;
 
+import com.sunsfan.entity.User;
+import com.sunsfan.entity.UserRelation;
+
+import java.util.List;
+
 /**
  * 〈一句话功能简述〉<br> 
  * 〈UserRelationService接口〉
@@ -19,6 +24,43 @@ package com.sunsfan.service;
  * @version 1.0.0
  */
 public interface UserRelationService {
+    /**
+     * 根据id获取用户对象
+     *
+     * @param id
+     * @return
+     */
+    UserRelation selectUserRelationById(Long id);
 
+    /**
+     * 获取所有用户对象
+     *
+     * @param
+     * @return
+     */
+    List<UserRelation> selectAll();
 
+    /**
+     * 新增用户对象
+     *
+     * @param userRelation
+     * @return
+     */
+    int saveUserRelation(UserRelation userRelation);
+
+    /**
+     * 修改用户对象
+     *
+     * @param userRelation
+     * @return
+     */
+    int updateUserRelation(UserRelation userRelation);
+
+    /**
+     * 根据id逻辑删除用户对象
+     *
+     * @param id
+     * @return
+     */
+    int deleteUserRelation(Long id);
 }

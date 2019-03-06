@@ -9,7 +9,6 @@
     <result column="sex" jdbcType="VARCHAR" property="sex" />
     <result column="isDelete" jdbcType="BIT" property="isdelete" />
     <result column="remark" jdbcType="VARCHAR" property="remark" />
-    <association column="departmentId" property="userDepartment" select="getUserDepartment" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -241,9 +240,6 @@
       remark = #{remark,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <select id="getUserDepartment" resultMap="com.sunsfan.dao.UserDepartmentMapper.BaseResultMap">
-    select id, departmentType, departmentName, groupName, from user_department where id=#{departmentId}
-  </select>
   <insert id="insertBatchSelective" parameterType="java.util.List">
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides=",">

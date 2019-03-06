@@ -9,7 +9,6 @@
     <result column="sex" jdbcType="VARCHAR" property="sex" />
     <result column="isDelete" jdbcType="BIT" property="isdelete" />
     <result column="remark" jdbcType="VARCHAR" property="remark" />
-    <association column="departmentId" property="userDepartment" select="getUserDepartment" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -109,17 +108,6 @@
     values (#{id,jdbcType=INTEGER}, #{departmentid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
       #{age,jdbcType=INTEGER}, #{sex,jdbcType=VARCHAR}, #{isdelete,jdbcType=BIT}, #{remark,jdbcType=VARCHAR}
       )
-  </insert>
-  <insert id="insertWithoutId" parameterType="com.sunsfan.entity.User">
-    <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
-      SELECT LAST_INSERT_ID() id
-    </selectKey>
-    insert into
-    user (departmentId, name,
-    age, sex, isDelete, remark)
-    values(#{departmentid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},
-    #{age,jdbcType=INTEGER}, #{sex,jdbcType=VARCHAR}, #{isdelete,jdbcType=BIT}, #{remark,jdbcType=VARCHAR}
-    )
   </insert>
   <insert id="insertSelective" parameterType="com.sunsfan.entity.User">
     insert into user
@@ -252,9 +240,6 @@
       remark = #{remark,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <select id="getUserDepartment" resultMap="com.sunsfan.dao.UserDepartmentMapper.BaseResultMap">
-    select id,departmentType,departmentName,groupName,isDelete from user_department where id=#{departmentId}
-  </select>
   <insert id="insertBatchSelective" parameterType="java.util.List">
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides=",">

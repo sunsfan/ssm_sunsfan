@@ -32,6 +32,4 @@ public interface UserDepartmentMapper {
     int insertBatchSelective(List<UserDepartment> records);
 
     int updateBatchByPrimaryKeySelective(List<UserDepartment> records);
-
-    List<User> getUsers(Long departmentId);
 }

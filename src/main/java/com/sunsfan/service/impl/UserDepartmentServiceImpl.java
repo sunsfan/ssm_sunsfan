@@ -89,9 +89,4 @@ public class UserDepartmentServiceImpl implements UserDepartmentService {
             return updateUserDepartment(userDepartment);
         }
     }
-
-    @Override
-    public List<User> selectAllUserByDepartmentId(Long id) {
-        return null;
-    }
 }

@@ -35,8 +35,12 @@ public class UserServiceImpl implements UserService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
 
-    @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    public UserServiceImpl(UserMapper userMapper) {
+        this.userMapper = userMapper;
+    }
 
     @Override
     public User selectUserById(Long id) {
@@ -83,10 +87,5 @@ public class UserServiceImpl implements UserService {
             user.setIsdelete(Boolean.TRUE);
             return updateUser(user);
         }
-    }
-
-    @Override
-    public UserDepartment selectUserDepartmentByUserId(Long id) {
-        return null;
     }
 }

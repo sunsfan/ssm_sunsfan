@@ -42,14 +42,6 @@ public interface UserDepartmentService {
     List<UserDepartment> selectAll();
 
     /**
-     * 根据部门id获取部门下所有员工对象
-     *
-     * @param id
-     * @return
-     */
-    List<User> selectAllUserByDepartmentId(Long id);
-
-    /**
      * 新增部门对象
      *
      * @param userDepartment

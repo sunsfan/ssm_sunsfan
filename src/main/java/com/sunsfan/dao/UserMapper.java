@@ -1,7 +1,6 @@
 package com.sunsfan.dao;
 
 import com.sunsfan.entity.User;
-import com.sunsfan.entity.UserDepartment;
 import com.sunsfan.entity.UserExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
